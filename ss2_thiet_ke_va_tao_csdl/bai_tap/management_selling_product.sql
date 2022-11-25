@@ -1,5 +1,5 @@
-create database management_selling_product;
-use management_selling_product;
+create database management_product;
+use management_product;
 create table customer(
 c_id int auto_increment primary key,
 c_name varchar(50),
@@ -21,10 +21,30 @@ p_price float
 );
 
 create table order_detail(
-o_id int auto_increment,
-p_id int auto_increment,
+o_id int ,
+p_id int ,
 odqty int,
 primary key(o_id,p_id),
 foreign key(o_id) references order1(o_id),
 foreign key(p_id) references product(p_id)
 );
+
+insert into customer(c_id,c_name,c_age)
+values(1,'Minh Quan',10),(2,'Ngoc Anh',20),(3,'hong ha',50);
+
+insert into order1(o_id,c_id,o_date,o_total_price)
+values(1,1,'2006/3/21',null),(2,2,'2006/3/23',null),(3,3,'2006/3/16',null);
+
+insert into product(p_id,p_name,p_price)
+values(1,'May giat',3),(2,'Tu Lanh',5),(3,'Dieu hoa',7),(4,'quat',1),(5,'bep dien',2);
+
+insert into order_detail(o_id,p_id,odqty)
+values(1,1,3),(1,3,7),(1,4,2),(2,1,1),(3,1,8),(2,5,4),(2,3,3);
+
+-- Hiển thị các thông tin  gồm oID, oDate, oPrice của tất cả các hóa đơn trong bảng Order
+select o_id,o_date,o_total_price from order1;
+
+-- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách sản phẩm được mua bởi các khách
+select c_name , p_name from (
+customer inner join order1 inner join order_detail inner join product
+on customer.c_id = corder1.c_id and order1.o_id = order_detail.o_id and order_detail.p_id = product.p_id);
