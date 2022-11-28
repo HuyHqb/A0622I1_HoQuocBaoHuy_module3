@@ -79,10 +79,7 @@ update student set class_id = 2 where student_name = 'Hung';
 -- Hiển thị các thông tin: StudentName, SubName, Mark. Dữ liệu sắp xếp theo điểm thi (mark) giảm dần. nếu trùng sắp theo tên tăng dần.
 select s.student_name,sub.sub_name,m.mark from 
 (student s inner join mark m inner join  subject sub
-on s.student_id = m.student_id and sub.sub_id = m.sub_id)
-order by mark desc, s.student_name asc;
-
-
+on s.student_id = m.student_id and sub.sub_id = m.sub_id);
 
 
 
