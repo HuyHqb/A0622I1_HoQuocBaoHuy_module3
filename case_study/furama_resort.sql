@@ -204,11 +204,35 @@ from  dich_vu dv
 join loai_dich_vu ldv on ldv.ma_loai_dich_vu = dv.ma_loai_dich_vu
 where dv.ma_dich_vu IN (SELECT hd.ma_dich_vu FROM hop_dong as hd WHERE  year(hd.ngay_lam_hop_dong) = 2020);
 -- 8.	Hiển thị thông tin ho_ten khách hàng có trong hệ thống, với yêu cầu ho_ten không trùng nhau. Học viên sử dụng theo 3 cách khác nhau để thực hiện yêu cầu trên.
+select distinct ho_ten from khach_hang;
+
+select ho_ten from khach_hang
+group by ho_ten
+order by ho_ten;
+
+select ho_ten from khach_hang
+union
+select ho_ten from khach_hang;
 
 -- 9.	Thực hiện thống kê doanh thu theo tháng, nghĩa là tương ứng với mỗi tháng trong năm 2021 thì sẽ có bao nhiêu khách hàng thực hiện đặt phòng.
-
--- 10.	Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. Kết quả hiển thị bao gồm ma_hop_dong, ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
-
+select month(ngay_lam_hop_dong) as thang , year(ngay_lam_hop_dong) as nam, count(ngay_lam_hop_dong) as so_lan_thue from hop_dong group by (month(ngay_lam_hop_dong));
+-- 10.	Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. Kết quả hiển thị bao gồm ma_hop_dong,
+-- ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
+select hd.ma_hop_dong, hd.ngay_lam_hop_dong, hd.ngay_ket_thuc, hd.tien_dat_coc, ifnull(sum(hdct.so_luong),0) as so_luong_dich_vu_di_kem
+from hop_dong hd
+left join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
+group by hd.ma_hop_dong;
 -- 11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond” và có dia_chi ở “Vinh” hoặc “Quảng Ngãi”.
-
+select dvdk.ma_dich_vu_di_kem, dvdk.ten_dich_vu_di_kem ,ma_khach_hang
+from dich_vu_di_kem dvdk 
+join hop_dong_chi_tiet hdct on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
+join hop_dong hd on hd.ma_hop_dong = hdct.ma_hop_dong
+where ma_khach_hang in (
+select ma_khach_hang from khach_hang kh  
+join loai_khach lk on lk.ma_loai_khach = kh.ma_loai_khach 
+where lk.ten_loai_khach  = 'Dianmond' and (kh.dia_chi like '%Vinh' or kh.dia_chi like '%Quảng Ngãi')
+);
+select * from khach_hang kh  
+join loai_khach lk on lk.ma_loai_khach = kh.ma_loai_khach 
+where lk.ten_loai_khach  = 'Diamond' and (kh.dia_chi like '%Vinh' or kh.dia_chi like '%Quảng Ngãi');
 -- 12.	Hiển thị thông tin ma_hop_dong, ho_ten (nhân viên), ho_ten (khách hàng), so_dien_thoai (khách hàng), ten_dich_vu, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem), tien_dat_coc của tất cả các dịch vụ đã từng được khách 
