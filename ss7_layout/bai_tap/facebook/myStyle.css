@@ -4,10 +4,21 @@ html {
     font-family: "Lucida Sans", sans-serif;
 }
 
+.imghome{
+    padding-left: 40px;
+}
+.searchTerm{
+    border: 2px solid lightblue;
+    size: 20px;
+    border-radius: 12px;
+    padding: 5px;
+}
+
 .header {
     background-color: #0000;
-    color: #ffffff;
+    color: #d5b1b1;
     padding: 15px;
+    display: flex;
 }
 
 .footer {

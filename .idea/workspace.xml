@@ -20,19 +20,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b2b8d2c-1ed2-4405-96ac-8e0519e0ce9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/dinh_dang_van_ban/dinh_dang_van_ban.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/dinh_dang_van_ban/my_css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/nhung_css/my_css.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/nhung_css/nhung_css.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/tao_trang_truyen/img/tran-duc-bo-la-ai.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/tao_trang_truyen/mycss.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss6_CSS/bai_tap/tao_trang_truyen/tao_trang_truyen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/facebook.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/myStyle.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/tao_layout_vs_html_css/bai_2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/tao_layout_vs_html_css/mycss.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/layout_with_rwd/css2.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/layout_with_rwd/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/layout_with_rwd/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/case_study/furama_resort.sql" beforeDir="false" afterPath="$PROJECT_DIR$/case_study/furama_resort.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/facebook.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/facebook.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/img/d4ZIVX-5C-b.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/myStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/facebook/myStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_layout/bai_tap/tao_layout_vs_html_css/bai_2.html" beforeDir="false" afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/tao_layout_vs_html_css/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ss7_layout/bai_tap/tao_layout_vs_html_css/mycss.css" beforeDir="false" afterPath="$PROJECT_DIR$/ss7_layout/bai_tap/tao_layout_vs_html_css/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +82,7 @@
       <updated>1668430606285</updated>
       <workItem from="1668430607698" duration="4000" />
       <workItem from="1669984091207" duration="5734000" />
+      <workItem from="1670238277194" duration="7894000" />
     </task>
     <servers />
   </component>
@@ -102,6 +99,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="526" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1669984172705">
